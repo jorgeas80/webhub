@@ -1,0 +1,5 @@
+Pulsa ENTER para buscar en wikipedia <input type="text" #term (keyup.enter)="search(term.value)">
+
+<ul>
+  <li *ngFor="let item of items | async">{{item}}</li>
+</ul>

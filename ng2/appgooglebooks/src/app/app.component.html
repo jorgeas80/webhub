@@ -1,0 +1,5 @@
+<input type="text" #title (keyup.enter)="search(title.value)">
+
+<ul>
+  <li *ngFor="let book of books">{{book}}</li>
+</ul>

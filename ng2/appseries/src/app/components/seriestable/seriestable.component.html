@@ -1,0 +1,32 @@
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>
+        <a (click)="field = 'name'; reverse = !reverse">Nombre</a>
+        <i *ngIf="field == 'name' && !reverse" class="glyphicon glyphicon-chevron-up"></i>
+        <i *ngIf="field == 'name' && reverse" class="glyphicon glyphicon-chevron-down"></i>
+      </th>
+      <th>Temporada</th>
+      <th>Episodio</th>
+      <th>Duración</th>
+      <th>
+        <a (click)="field = 'rating'; reverse = !reverse">Rating</a>
+        <i *ngIf="field == 'rating' && !reverse" class="glyphicon glyphicon-chevron-up"></i>
+        <i *ngIf="field == 'rating' && reverse" class="glyphicon glyphicon-chevron-down"></i>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let episode of series | filter: filter | orderby: field:reverse">
+      <td><img [src]="episode.img_url" alt="img episode"></td>
+      <td [appSeriestatus]="episode.status">
+        {{episode.name}} 
+        <i *ngIf="!inMySeries(episode.id)" class="glyphicon glyphicon-plus addtomyseries" (click)="addToMySeries(episode)"></i> </td>
+      <td>{{episode.season}}</td>
+      <td>{{episode.episode}}</td>
+      <td>{{episode.runtime}}min</td>
+      <td><app-starrating [r]="episode.rating"></app-starrating></td>
+    </tr>
+  </tbody>
+</table>

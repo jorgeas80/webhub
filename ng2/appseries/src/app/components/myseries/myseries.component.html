@@ -1,0 +1,17 @@
+<app-topnavbar (filterseries)="onFilterSeries($event)" [searchEnabled]="false"></app-topnavbar>
+<div class="container-fluid">
+  <div *ngIf="myseries.length <= 0" class="alert alert-danger">
+    No has añadido ninguna serie aún.
+  </div>
+  <table *ngIf="myseries.length > 0" class="table myseriestable">
+    <tr colspan="2">
+      <td>
+        <h3>Mis series</h3>
+      </td>
+    </tr>
+    <tr *ngFor="let serie of myseries">
+      <td>{{serie.name}}</td>
+      <td><button type="button" class="btn btn-danger" (click)="deleteFromMySeries(serie.id)">Borrar</button></td>
+    </tr>
+  </table>
+</div>

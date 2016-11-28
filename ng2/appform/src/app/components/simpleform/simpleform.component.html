@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  <h2>Mi formulario</h2>
+  <form #form="ngForm" (ngSubmit)="submitForm(form.value)">
+    <div class="form-group">
+      <label for="firstName">Nombre</label>
+      <input type="text" class="form-control" #firstName="ngModel" name="firstName" [(ngModel)]="user.firstName" required pattern=".{3,}">
+      <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">El campo nombre es requerido y ha de tener más de 3 caracteres</div>
+    </div>
+
+  </form>
+</div>

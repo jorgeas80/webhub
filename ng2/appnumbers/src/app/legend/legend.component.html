@@ -1,0 +1,8 @@
+<h1>{{title}}</h1>
+<ul *ngIf="showLegend">
+  <li>Números primos en <span class="text-success">verde</span></li>
+  <li>Múltiplos de 3 en <span class="text-danger">rojo</span></li>
+</ul>
+
+<button type="button" class="btn btn-info" (click)="toggleLegend()">Ocultar leyenda</button>
+

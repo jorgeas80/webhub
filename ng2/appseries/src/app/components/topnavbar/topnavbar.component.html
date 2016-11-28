@@ -1,0 +1,20 @@
+<header>
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <a class="navbar-brand" href="#">Mis series</a>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+      </li>
+      <li>
+        <a routerLink="/mis-series" routerLinkActive="active">Mis series</a>
+      </li>
+    </ul>
+    <div id="navbar" class="navbar-collapse collapse" *ngIf="searchEnabled">
+      <form class="navbar-form navbar-right" role="form">
+        <div class="form-group">
+          <input type="text" class="form-control" (keyup)="emitSearchTerm($event)">
+        </div>
+      </form>
+    </div>
+  </nav>
+</header>

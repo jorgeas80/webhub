@@ -1,0 +1,6 @@
+<app-topnavbar (filterseries)="onFilterSeries($event)" [searchEnabled]="true"></app-topnavbar>
+<div class="container-fluid">
+  <div *ngIf="!hasSeries" class="alert alert-danger">{{errorMsg}}</div>
+  <app-datepicker (dtevt)="setDate($event)"></app-datepicker>
+  <app-seriestable *ngIf="hasSeries" [d]="d" (errorseries)="onErrorSeries($event)" [filter]="searchTerm"></app-seriestable>
+</div>

@@ -1,0 +1,31 @@
+
+.table > tbody > tr > td {
+     vertical-align: middle;
+     font-size: 1.5em;
+     text-align: center;
+}
+
+.table > thead > tr > th {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table > thead > tr > th > a {
+  cursor: pointer;
+}
+
+.table > tbody > tr > td > img {
+  /* Maximum size to original img dimensions / 2. The browser will take care of the size, keeping the aspect ratio */
+  max-width: 105px;
+  max-height: 148px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.addtomyseries {
+  cursor: pointer;
+}

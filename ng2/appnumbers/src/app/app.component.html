@@ -1,0 +1,11 @@
+<div class="container">
+
+  <!-- Si quiero pasar title como argumento -->
+  <!--app-numberslist [title]="'Lista de números'" (extra)="showExtraEvent($evt)"></app-numberslist-->
+  
+  <!-- Si dejo que obtenga title a partir de un OpaqueToken -->
+  <app-numberslist (extra)="showExtraEvent($event)"></app-numberslist>
+
+
+  <app-legend *ngIf="show" [title]="'Leyenda'"></app-legend>
+</div>

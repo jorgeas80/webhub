@@ -1,0 +1,8 @@
+<ul class="star-rating">
+  <template ngFor let-star [ngForOf]="stars">
+    <li class="star">
+      <i *ngIf="star" class="glyphicon glyphicon-star"></i>
+      <i *ngIf="!star" class="glyphicon glyphicon-star-empty"></i>
+    </li>
+  </template>
+</ul>

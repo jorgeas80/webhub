@@ -1,0 +1,5 @@
+Filtra la lista por nombre: <input type="text" [(ngModel)]="productName">
+
+<ul>
+  <li *ngFor="let product of products | productfilter: productName">{{product.productName}}</li>
+</ul>
