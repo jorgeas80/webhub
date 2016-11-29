@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Jsonp, URLSearchParams } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class WikipediaService {

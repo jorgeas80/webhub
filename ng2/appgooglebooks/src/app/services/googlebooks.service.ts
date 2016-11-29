@@ -1,14 +1,14 @@
 import { Http, Response } from '@angular/http';
 import { Injectable, Inject } from '@angular/core';
 import { GOOGLE_BOOKS_SEARCH_URL } from '../app.tokens';
-import 'rxjs/add/operator/map';
+import { Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class GooglebooksService {
 
   constructor(private http: Http, @Inject(GOOGLE_BOOKS_SEARCH_URL) private baseUrl) { }
 
-  getBooks(title:string) {
+  getBooks(title: string) {
     let url = this.baseUrl + title;
 
     return this.http.get(url)
