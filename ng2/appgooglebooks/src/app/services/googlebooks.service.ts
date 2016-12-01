@@ -1,7 +1,7 @@
 import { Http, Response } from '@angular/http';
 import { Injectable, Inject } from '@angular/core';
 import { GOOGLE_BOOKS_SEARCH_URL } from '../app.tokens';
-import { Observable} from 'rxjs/Rx';
+import 'rxjs/Rx';
 
 @Injectable()
 export class GooglebooksService {
