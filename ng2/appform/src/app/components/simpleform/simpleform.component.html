@@ -1,10 +1,49 @@
 <div class="jumbotron">
-  <h2>Mi formulario</h2>
+  <h2>Template driven form</h2>
   <form #form="ngForm" (ngSubmit)="submitForm(form.value)">
+
     <div class="form-group">
-      <label for="firstName">Nombre</label>
+      <label for="firstName">First name</label>
       <input type="text" class="form-control" #firstName="ngModel" name="firstName" [(ngModel)]="user.firstName" required pattern=".{3,}">
-      <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">El campo nombre es requerido y ha de tener más de 3 caracteres</div>
+      <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">First name is mandatory and must contain 3 characters at least</div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last name</label>
+      <input type="text" class="form-control" #lastName="ngModel" name="lastName" [(ngModel)]="user.lastName" required>
+      <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">Last name is mandatory</div>
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+    </div>
+    <div class="radio">
+      <label>
+          <input type="radio" name="gender" value="Male" [(ngModel)]="user.gender">
+          Male
+        </label>
+    </div>
+    <div class="radio">
+      <label>
+          <input type="radio" name="gender" value="Female" [(ngModel)]="user.gender">
+          Female
+        </label>
+    </div>
+
+    <div class="form-group">
+      <label>Activities</label>
+    </div>
+    <label class="checkbox-inline">
+        <input type="checkbox" value="hiking" name="hiking" [(ngModel)]="user.hiking"> Hiking
+      </label>
+    <label class="checkbox-inline">
+        <input type="checkbox" value="swimming" name="swimming" [(ngModel)]="user.swimming"> Swimming
+      </label>
+    <label class="checkbox-inline">
+        <input type="checkbox" value="running" name="running" [(ngModel)]="user.running"> Running
+      </label>
+    <div class="form-group">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-default">Submit</button>
     </div>
 
   </form>

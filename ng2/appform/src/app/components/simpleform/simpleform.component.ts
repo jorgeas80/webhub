@@ -17,6 +17,7 @@ export class SimpleformComponent implements OnInit {
 
   submitForm(form: any): void {
     console.log(form);
+    alert('Form sent');
   }
 
 }
