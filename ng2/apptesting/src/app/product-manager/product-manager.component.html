@@ -1,0 +1,11 @@
+Busqueda por nombre de producto: <input type="text" [(ngModel)]="productName">
+
+<ul>
+  <li *ngFor="let product of products | productFilter: productName">{{ product.name }}</li>
+</ul>
+
+Nuevo producto:
+<input #newProduct />
+<button (click)="addProduct(newProduct.value); newProduct.value=''">
+  Nuevo producto
+</button>
