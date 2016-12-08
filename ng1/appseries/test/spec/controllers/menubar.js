@@ -6,18 +6,42 @@ describe('Controller: MenubarCtrl', function () {
   beforeEach(module('appseriesApp'));
 
   var MenubarCtrl,
-    scope;
+    rootScope, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
+    rootScope = $rootScope;
+
     MenubarCtrl = $controller('MenubarCtrl', {
-      $scope: scope
+      $rootScope: rootScope,
       // place here mocked dependencies
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(MenubarCtrl.awesomeThings.length).toBe(3);
+  it('should start with an empty search term', function () {
+    expect(MenubarCtrl.searchTerm).toEqual({});
   });
+
+  it('should emit search term', function () {
+    var result;
+    var st = {
+      show: {
+        name: "foo"
+      }
+    }
+
+    var listener = rootScope.$on('MenubarCtrl:rootScope:emit', function (event, data) {
+      result = data;
+    });
+    scope = rootScope.$new();
+
+    MenubarCtrl.searchTerm = st;
+    MenubarCtrl.emitSearchTerm();
+
+    expect(result).toEqual(st);
+
+    // Need to explicitly destroy listener
+    scope.$on('$destroy', listener);
+  });
+
 });

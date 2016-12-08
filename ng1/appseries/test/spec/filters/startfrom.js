@@ -11,9 +11,9 @@ describe('Filter: startFrom', function () {
     startFrom = $filter('startFrom');
   }));
 
-  it('should return the input prefixed with "startFrom filter:"', function () {
-    var text = 'angularjs';
-    expect(startFrom(text)).toBe('startFrom filter: ' + text);
+  it('should return a sliced version of the input array', function () {
+    var input = [0, 1, 2, 3, 4 , 5, 6, 7, 8, 9];
+    expect(startfrom(input, 4)).toEqual([4, 5, 6, 7, 8, 9]);
   });
 
 });

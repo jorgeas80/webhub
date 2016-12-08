@@ -12,9 +12,11 @@ describe('Directive: extrainfo', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<extrainfo></extrainfo>');
+  it('should add the correct class to the DOM element', inject(function ($compile) {
+    
+    element = angular.element('<div extra-info data-status="Running">Foo</div>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the extrainfo directive');
+
+    expect(element.hasClass("alert-success")).toEqual(true);
   }));
 });

@@ -11,8 +11,12 @@ describe('Service: url', function () {
     url = _url_;
   }));
 
-  it('should do something', function () {
+  it('URL should exist', function () {
     expect(!!url).toBe(true);
+  });
+
+  it('URL should point to TVMaze API', function() {
+    expect(url).toBe("http://api.tvmaze.com/schedule?country=US");
   });
 
 });
