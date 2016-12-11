@@ -7,12 +7,12 @@
  * # extrainfo
  */
 angular.module('appseriesApp')
-  .directive('extrainfo', function () {
+  .directive('extraInfo', function () {
     return {
       restrict: 'A',
       link: function postLink(scope, element, attrs) {
-
-        switch (attrs.status) {
+        
+        switch(attrs.status) {
           case "Running":
             element.addClass("alert alert-success");
             break;
@@ -24,7 +24,7 @@ angular.module('appseriesApp')
           case "Ended":
             element.addClass("alert alert-danger");
             break;
-        };
+        }
       }
     };
   });

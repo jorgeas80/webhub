@@ -8,7 +8,7 @@ describe('Service: tvmaze', function () {
   // Get mock backend and service
   var tvmaze;
   var httpBackend;
-  
+
   beforeEach(inject(function ($httpBackend, _tvmaze_) {
     httpBackend = $httpBackend;
     tvmaze = _tvmaze_;
@@ -33,11 +33,15 @@ describe('Service: tvmaze', function () {
     var mm = date.getMonth() + 1; // getMonth() is zero-based
     var dd = date.getDate();
 
-    if (mm < 10)
+    if (mm < 10) {
       mm = '0' + mm;
+    }
+      
 
-    if (dd < 10)
+    if (dd < 10) {
       dd = '0' + dd;
+    }
+      
 
     var strDate = [date.getFullYear(), mm, dd].join('-');
 

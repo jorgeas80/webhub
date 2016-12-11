@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: extrainfo', function () {
+describe('Directive: starrating', function () {
 
   // load the directive's module
   beforeEach(module('appseriesApp'));
@@ -18,5 +18,8 @@ describe('Directive: extrainfo', function () {
     element = $compile(element)(scope);
 
     expect(element.hasClass("alert-success")).toEqual(true);
+    
+    // TODO: Write real text here
+    expect(true).toEqual(true);
   }));
 });

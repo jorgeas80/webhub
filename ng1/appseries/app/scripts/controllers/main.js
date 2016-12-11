@@ -1,3 +1,5 @@
+/// <reference path="../../../node_modules/@types/angular/index.d.ts" />
+
 'use strict';
 
 /**
@@ -9,17 +11,12 @@
  */
 angular.module('appseriesApp')
   .controller('MainCtrl', function ($rootScope, $scope, tvmaze) {
+
     var vm = this;
 
     // Will store the array of episodes
     vm.series_today = [];
 
-    ////////////////////////// Init stuff (it just works if using component)
-    /*
-    vm.$onInit = function () {
-      vm.getReleasesOf();
-    }
-    */
 
     ///////////////////////// Pagination stuff
     vm.viewby = 10;
@@ -51,22 +48,22 @@ angular.module('appseriesApp')
     vm.setItemsPerPage = function (num) {
       vm.itemsPerPage = num;
       vm.currentPage = 1; //reset to first page
-    }
+    };
 
     ////////////////////////// Sort table stuff
     vm.orderBy = "show.name";
     vm.reverse = false;
 
-    vm.setOrder = function (orderby) {
+    vm.setOrder = function(orderby) {
       if (orderby === vm.orderBy) {
         vm.reverse = !vm.reverse;
       }
       vm.orderBy = orderby;
-    }
+    };
 
-    vm.seriesFilterFnByRating = function (serie) {
+    vm.seriesFilterFnByRating = function(serie) {
       return (!serie.show.rating.average) ? 0 : parseFloat(serie.show.rating.average);
-    }
+    };
 
     // This is to filter the search table
     vm.searchTerm = {};
@@ -85,21 +82,19 @@ angular.module('appseriesApp')
     ///////////////////////// Rest of stuff
 
     // Get JSON with today releases in USA
-    vm.getReleasesOf = function () {
+    vm.getReleasesOf = function() {
       vm.series_today = [];
 
       tvmaze.getReleasesOf(vm.d).then(
-        // successful
-        function (response) {
-          vm.series_today = response.data;
-        },
+            // successful
+            function (response) {
+              vm.series_today = response.data;
+            },
 
-        // Error
-        function (response) {
-          vm.series_today = [];
-        }
-      );
-    }
-
-    vm.getReleasesOf();
+            // Error
+            function () {
+              vm.series_today = [];
+            }
+          );
+    };
   });

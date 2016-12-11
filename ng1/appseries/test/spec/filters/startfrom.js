@@ -1,14 +1,14 @@
 'use strict';
 
-describe('Filter: startFrom', function () {
+describe('Filter: startfrom', function () {
 
   // load the filter's module
   beforeEach(module('appseriesApp'));
 
   // initialize a new instance of the filter before each test
-  var startFrom;
+  var startfrom;
   beforeEach(inject(function ($filter) {
-    startFrom = $filter('startFrom');
+    startfrom = $filter('startFrom');
   }));
 
   it('should return a sliced version of the input array', function () {

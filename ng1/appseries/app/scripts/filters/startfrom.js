@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc filter
- * @name appseriesApp.filter:startFrom
+ * @name appseriesApp.filter:startfrom
  * @function
  * @description
- * # startFrom
+ * # startfrom
  * Filter in the appseriesApp.
  */
 angular.module('appseriesApp')

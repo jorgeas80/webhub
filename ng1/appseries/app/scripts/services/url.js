@@ -8,4 +8,4 @@
  * Constant in the appseriesApp.
  */
 angular.module('appseriesApp')
-  .constant('url', 'http://api.tvmaze.com/schedule?country=US');
+  .constant('url', "http://api.tvmaze.com/schedule?country=US");

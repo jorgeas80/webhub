@@ -14,17 +14,17 @@ describe('Controller: MainCtrl', function () {
     // Mock the real service
     serviceMock = _tvmaze_;
 
-    serviceMock.getReleasesOf = function(dt) {
+    serviceMock.getReleasesOf = function() {
       var deferred = $q.defer();
       var result = {
         data: [1, 2, 3]
-      }
+      };
       deferred.resolve(result);
       return deferred.promise;
     };
 
     rootScope = $rootScope;
-    
+
     MainCtrl = $controller('MainCtrl', {
       $rootScope: rootScope,
       $scope: $rootScope.$new(),
@@ -45,6 +45,7 @@ describe('Controller: MainCtrl', function () {
     expect(MainCtrl.series_today).toEqual([]);
   });
 
+
   it('Async service updates list', function() {
 
     // MainCtrl.getReleasesOf method will use it
@@ -59,6 +60,7 @@ describe('Controller: MainCtrl', function () {
     // Assert expected result
     expect(MainCtrl.series_today).toEqual([1, 2, 3]);    
   });
+
 
   it('MainCtrl correctly receives data emited from rootScope', function() {
     // Emit message

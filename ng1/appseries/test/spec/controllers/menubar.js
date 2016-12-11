@@ -22,13 +22,13 @@ describe('Controller: MenubarCtrl', function () {
     expect(MenubarCtrl.searchTerm).toEqual({});
   });
 
-  it('should emit search term', function () {
+  it('should emit search term', function() {
     var result;
     var st = {
       show: {
         name: "foo"
       }
-    }
+    };
 
     var listener = rootScope.$on('MenubarCtrl:rootScope:emit', function (event, data) {
       result = data;
@@ -43,5 +43,6 @@ describe('Controller: MenubarCtrl', function () {
     // Need to explicitly destroy listener
     scope.$on('$destroy', listener);
   });
+
 
 });

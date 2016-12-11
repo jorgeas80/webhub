@@ -1,3 +1,5 @@
+/// <reference path="../../../node_modules/@types/angular/index.d.ts" />
+
 'use strict';
 
 /**
@@ -9,6 +11,7 @@
  */
 angular.module('appseriesApp')
   .controller('MenubarCtrl', function ($rootScope) {
+
     // Capturing this environment at first: https://johnpapa.net/angularjss-controller-as-and-the-vm-variable/
     var vm = this;
 
@@ -16,9 +19,11 @@ angular.module('appseriesApp')
     vm.searchTerm = {};
 
     // Method called when the input search changes.
-    vm.emitSearchTerm = function () {
+    vm.emitSearchTerm = function() {
 
       // Send a message to a controller which is out of our hierarchy
       $rootScope.$emit('MenubarCtrl:rootScope:emit', vm.searchTerm);
-    }
+    };
+
+
   });
