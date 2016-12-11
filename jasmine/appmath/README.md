@@ -1,4 +1,4 @@
-# How did I build this example
+# How I built this example
 
 To create this basic jasmine example from scratch, follow these steps
 
