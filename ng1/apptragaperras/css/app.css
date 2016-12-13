@@ -1,0 +1,12 @@
+footer p{
+    margin: 1em 0;
+}
+
+body {
+    padding-top: 4em;
+}
+
+.img-center {
+    display: block;
+    margin: 0 auto;
+}

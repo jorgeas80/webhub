@@ -1,0 +1,18 @@
+<div ng-if="vm.result != 'running'">
+  <button type="button" class="btn btn-info" ng-click="vm.start()">Dale</button>
+</div>
+<div ng-if="vm.result == 'running'">
+  <p>Dándole vueltas a la ruleta...</p>
+  <button type="button" class="btn btn-danger" ng-click="vm.stop()">Para</button>
+</div>
+<div ng-if="vm.result != 'init'">
+  <div class="container-fluid row">
+    <div class="col-md-4 col-sm-4" ng-repeat="item in vm.items track by $index">
+      <img class="img-center img-responsive" ng-src="{{item}}" alt="">
+    </div>
+  </div>
+  <div ng-if="vm.result === 'win' || vm.result === 'lose'">
+    <h2 ng-class="vm.text_classes"><strong>{{vm.msg}}</strong></h2>
+    <img class="img-responsive img-rounded img-center" ng-src="{{vm.img}}" alt="imagen">
+  </div>
+</div>

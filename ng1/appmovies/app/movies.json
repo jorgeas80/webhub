@@ -1,0 +1,25 @@
+{
+  "movies": [
+    {
+      "id": "1",
+      "title": "Big Lebowski",
+      "director": "Joel and Ethan Coen",
+      "releaseYear": 1998,
+      "genre": "Comedy"
+    },
+    {
+      "title": "Star Wars",
+      "releaseYear": "1976",
+      "director": "George Lucas",
+      "genre": "Science Fiction",
+      "id": "rJkraQSbg"
+    },
+    {
+      "title": "Memento",
+      "releaseYear": "1999",
+      "director": "Christopher Nolan",
+      "genre": "Thriller",
+      "id": "HyW2KDezx"
+    }
+  ]
+}
