@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn t work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+        <style>
+            #col1 {
+                background-color: blue;
+            }
+
+            #col2 {
+                background-color: green;
+            }
+
+            #col3 {
+                background-color: red;
+            }
+
+            #col4 {
+                background-color: yellow;
+            }
+            
+            /**
+             * Al quitar este estilo, si eliminamos el clearfix quedan
+             * a la derecha 3 columnas y a la izquierda la columna grande
+             * Estéticamente es más bonito pero no es lo mismo que le he
+             * pedido mediante los col-*-*
+             **/
+            [class*="col-"] {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div id="col1" class="col-xs-6 col-sm-3">
+                    COLUMNA 1
+                    <br>
+                    Resize your viewport or check it out on your phone for an example.
+                </div>
+                <div id="col2" class="col-xs-6 col-sm-3">COLUMNA 2</div>
+
+                <!-- Add the extra clearfix for only the required viewport -->
+                <div class="clearfix visible-xs"></div>
+
+                <div id="col3" class="col-xs-6 col-sm-3">COLUMNA 3</div>
+                <div id="col4" class="col-xs-6 col-sm-3">COLUMNA 4</div>
+            </div>
+        </div>
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </body>
+</html>
