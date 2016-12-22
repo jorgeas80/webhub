@@ -1,0 +1,13 @@
+<div class="padding text-center">
+  <h1>
+    <p>Ponle nota a mi perro</p>
+    <img src="../img/perrete.png">
+    <div>
+      <a href="javascript:" ng-repeat="r in main.ratingArr" class="padding" style="text-decoration: none;">
+        <i class="icon {{r.icon}}" ng-mouseenter="main.showRating(r.value)" ng-mouseleave="main.clearRating()" ng-click="main.setRating(r.value)"></i>
+      </a>
+    </div>
+
+    <button ui-sref="login" class="button button-block button-clam button-positive">Cerrar sesión</button>
+  </h1>
+</div>

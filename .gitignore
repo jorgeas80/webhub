@@ -95,4 +95,5 @@ assets/videos/
 !assets/videos/tour_*.mp4
 node_modules
 builds/**/images/*
-
+bower_components
+.idea

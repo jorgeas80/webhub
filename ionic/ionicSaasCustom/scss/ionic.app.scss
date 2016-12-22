@@ -1,0 +1,173 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// Our own Sass. First variables
+$title: #888 !default;
+$box-bg: #e6ebe0 !default;
+$box-radius: 5px !default;
+$text: #444 !default;
+$redes: (facebook, #3b5998), (twitter, #00aced), (gplus, #dd4b39);
+$title-font-family: 'Georgia', serif !default;
+$font-family: 'Helvetica', sans-serif !default;
+$fp: 16px !default;
+
+// Now mixins
+@mixin box($radius: null, $bg: #f2f2f2, $space: 20px, $text: #444) {
+  padding: ($space / 2);
+  background-color: $bg;
+  border-radius: $radius;
+  margin-bottom: $space;
+  @if lightness($bg) < 50% {
+    color: #fff;
+  } @else {
+    color: $text;
+  }
+}
+
+// Layouts
+.container {
+  margin: 0 auto;
+  max-width: 680px;
+  padding: 0 20px;
+  color: $title;
+}
+
+.box {
+  @include box($box-radius, $box-bg, 20px, $text);
+
+  .head {
+    border-bottom: 1px solid #9bc1bc;
+    padding-bottom: 10px;
+
+    h3 {
+      margin: 0;
+      color: #5ca4a9;
+    }
+  }
+
+  .cont {
+    padding-top: 10px;
+  }
+}
+
+.box-grey {
+  @include box(6px, #f3f3f3, 50px, $text);
+}
+
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #9bc1bc;
+  color: white;
+  font-size: 0.8em;
+  border-radius: 4px;
+  text: {
+    decoration: none;
+    transform: uppercase;
+  }
+
+  &-cta {
+    background-color: #ed6a5a;
+    position: relative;
+    padding-left: 30px;
+
+    &::before {
+      content: "";
+      display: block;
+      top: 18px;
+      left: 15px;
+      position: absolute;
+      border: {
+        width: 4px;
+        style: solid;
+        color: transparent;
+        left-color: white;
+      }
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+
+%btn {
+  display: inline-block;
+  padding: 10px 20px 10px 36px;
+  color: white;
+  font-size: 0.8em;
+  border-radius: 4px;
+  text: {
+    decoration: none;
+    transform: uppercase;
+  }
+  background: {
+    position: 8px 50%;
+    repeat: no-repeat;
+    size: 20px 20px;
+  }
+}
+
+@each $red, $color in $redes {
+  .btn-#{$red} {
+    @extend %btn;
+    background: {
+      color: $color;
+      image: url('../img/icon-#{$red}.png');
+    }
+  }
+}
+
+// DOM elements
+body {
+  color: $text;
+  font-family: $font-family;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.2em;
+  margin: 1em 0;
+  color: $title;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1.2em;
+  margin: 0 0 0.5em 0;
+}
+
+p {
+  margin: 0 0 1em 0;
+  font-size: $fp;
+}
+
+
+
